@@ -121,3 +121,5 @@ app.listen(port, ()=> { // runs on the server when its up and running
 
 // heroku create ${name}
 // add start key to package scripts in package.json to tell heroku which file to run
+// watch out for the urls
+// git push heroku main

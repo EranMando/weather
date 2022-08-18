@@ -9,6 +9,7 @@ console.log(__dirname)
 console.log(path.join(__dirname,'../public'))
 
 const app = express()
+const port = process.env.PORT || 3000 // where heroku puts the port to run our program
 
 // define paths for express coonfig
 const publicDirPath = path.join(__dirname,'../public')
@@ -112,6 +113,11 @@ app.get('*', (req,res)=>{
 })
 
 
-app.listen(3000, ()=> { // runs on the server when its up and running   
-   console.log('Server is up on port: 3000')
+app.listen(port, ()=> { // runs on the server when its up and running   
+   console.log('Server is up on port: ' + port)
 })
+
+
+
+// heroku create ${name}
+// add start key to package scripts in package.json to tell heroku which file to run
